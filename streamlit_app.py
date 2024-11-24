@@ -56,7 +56,7 @@ if uploaded_image is not None:
 if submit:
   # load the model
   #model = tf.keras.models.load_model('handwrittendigit.model')
-  model = tf.keras.models.load_model('BenimModelim.h5')
+  model =load_model('BenimModelim.h5')
 
   # use the model to predict new image
   prediction = classify_digit(model, temp_image_path)
