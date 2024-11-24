@@ -1,7 +1,7 @@
 # libraries
 
 import os
-import cv2
+import cv2 as cv
 import numpy as np
 import tensorflow as tf
 
@@ -12,7 +12,7 @@ import tempfile
 
 # function 1 : to classify the image
 def classify_digit(model, image):
-    img = cv2.imread(image)[:,:,0]
+    img = cv.imread(image)[:,:,0]
     img = np.invert(np.array([img]))
     prediction = model.predict(img)
     return prediction
@@ -41,7 +41,7 @@ if uploaded_image is not None:
     image_np = np.array(Image.open(uploaded_image))
 
     temp_image_path = os.path.join(tempfile.gettempdir(), 'temp_image.png')
-    cv2.imwrite(temp_image_path, image_np)
+    cv.imwrite(temp_image_path, image_np)
 
     resized_image = resize_image(uploaded_image, (300, 300))
 
