@@ -9,7 +9,7 @@ import streamlit as st
 from PIL import Image
 
 import tempfile
-
+from tensorflow.keras.models import load_model
 # function 1 : to classify the image
 def classify_digit(model, image):
     img = cv.imread(image)[:,:,0]
