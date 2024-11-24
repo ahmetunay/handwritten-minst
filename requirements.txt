@@ -1,1 +1,6 @@
 streamlit
+cv2
+numpy 
+tensorflow
+Image
+tempfile
